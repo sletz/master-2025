@@ -7,14 +7,8 @@ Control structure: choice with IF
 
 int main()
 {
-    int a = 20;
+    int a = 56;
   
-    if (a < 20) {
-        printf("'a' variable is less than 20\n");
-    } else {
-        printf("a' variable is greater or equal to 20\n");
-    }
-
     if (a < 20) {
         printf("'a' variable is less than 20\n");
     } else if (a == 20) {
