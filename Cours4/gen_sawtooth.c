@@ -19,7 +19,10 @@ void init_sawtooth(int sample_rate, int freq)
     table_sawtooth = (float*)malloc(table_size_sawtooth * sizeof(float));
     
     /* Fill the table */
-    // TODO
+    int i;
+    for (i = 0; i < table_size_sawtooth; i = i+1) {
+        table_sawtooth[i] = (float)i/(float)table_size_sawtooth;
+    }
 
     /* Init the phase */
     phase_sawtooth = 0;
@@ -45,7 +48,10 @@ float process_one_sample_sawtooth()
 
 void display_sawtooth()
 {
-    // TODO
+    int i;
+    for (i = 0; i < table_size_sawtooth; i = i+1) {
+        printf("Index = %d Sample = %f\n", i, table_sawtooth[i]);
+    }
 }
 
 int main()

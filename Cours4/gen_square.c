@@ -19,7 +19,15 @@ void init_square(int sample_rate, int freq)
     table_square = (float*)malloc(table_size_square * sizeof(float));
     
     /* Fill the table */
-    // TODO
+    // 2° version with 1 loop and a 'if'
+    int i;
+    for (i = 0; i < table_size_square; i = i+1) {
+        if (i < table_size_square/2) {
+            table_square[i] = 1.0;
+        } else {
+            table_square[i] = -1.0;
+        }
+    }
 
     /* Init the phase */
     phase_square = 0;
@@ -37,15 +45,19 @@ void process_square(float* output, int nframes)
     // TODO
 }
 
-void display_table_square()
+void display_square()
 {
-    // TODO
+    int i;
+    
+    for (i = 0; i < table_size_square; i = i+1) {
+        printf("Sample = %f\n", table_square[i]);
+    }
 }
 
 int main()
 {
     init_square(44100, 800);
-    display_table_square();
+    display_square();
     
     // Simulate audio generation: generate a sequence of 500 samples
     printf("==================\n");
