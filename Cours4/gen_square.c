@@ -45,10 +45,15 @@ void process_square(float* output, int nframes)
     // TODO
 }
 
+/* Return 1 sample and update the phase  */
+float process_one_sample_square()
+{
+    // TODO
+}
+
 void display_square()
 {
     int i;
-    
     for (i = 0; i < table_size_square; i = i+1) {
         printf("Sample = %f\n", table_square[i]);
     }

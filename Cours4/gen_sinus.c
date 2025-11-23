@@ -49,6 +49,17 @@ void process_sinus(float* output, int nframes)
     }
 }
 
+/* Return 1 sample and update the phase  */
+float process_one_sample_sinus()
+{
+    float res = table_sinus[phase_sinus];
+    phase_sinus = phase_sinus + 1;
+    if (phase_sinus == table_size_sinus) {
+        phase_sinus = 0;
+    }
+    return res;
+}
+
 void display_sinus()
 {
     int i;
